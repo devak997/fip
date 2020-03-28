@@ -8,61 +8,61 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="profile_id" class="control-label">Profile ID</label>
+						<label for="profile_id" class="control-label"><span class="text-danger">*</span>Profile ID</label>
 						<div class="form-group">
 							<input type="text" name="profile_id" value="<?php echo $this->input->post('profile_id'); ?>" class="form-control" id="profile_id" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ssc_percentage" class="control-label">SSC Percentage</label>
+						<label for="ssc_percentage" class="control-label"><span class="text-danger">*</span>SSC Percentage</label>
 						<div class="form-group">
 							<input type="text" name="ssc_percentage" value="<?php echo $this->input->post('ssc_percentage'); ?>" class="form-control" id="ssc_percentage" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ssc_passing_year" class="control-label">SSC Passing Year</label>
+						<label for="ssc_passing_year" class="control-label"><span class="text-danger">*</span>SSC Passing Year</label>
 						<div class="form-group">
 							<input type="text" name="ssc_passing_year" value="<?php echo $this->input->post('ssc_passing_year'); ?>" class="form-control" id="ssc_passing_year" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ssc_institute" class="control-label">SSC Institute</label>
+						<label for="ssc_institute" class="control-label"><span class="text-danger">*</span>SSC Institute</label>
 						<div class="form-group">
 							<input type="text" name="ssc_institute" value="<?php echo $this->input->post('ssc_institute'); ?>" class="form-control" id="ssc_institute" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="inter_percentage" class="control-label">Inter Percentage</label>
+						<label for="inter_percentage" class="control-label"><span class="text-danger">*</span>Inter/Polytechnic Percentage</label>
 						<div class="form-group">
 							<input type="text" name="inter_percentage" value="<?php echo $this->input->post('inter_percentage'); ?>" class="form-control" id="inter_percentage" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="inter_passing_year" class="control-label">Inter Passing Year</label>
+						<label for="inter_passing_year" class="control-label"><span class="text-danger">*</span>Inter/Polytechnic Passing Year</label>
 						<div class="form-group">
 							<input type="text" name="inter_passing_year" value="<?php echo $this->input->post('inter_passing_year'); ?>" class="form-control" id="inter_passing_year" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="inter_institute" class="control-label">Inter Institute</label>
+						<label for="inter_institute" class="control-label"><span class="text-danger">*</span>Inter/Polytechnic Institute</label>
 						<div class="form-group">
 							<input type="text" name="inter_institute" value="<?php echo $this->input->post('inter_institute'); ?>" class="form-control" id="inter_institute" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ug_percentage" class="control-label">UG Percentage</label>
+						<label for="ug_percentage" class="control-label"><span class="text-danger">*</span>UG Percentage</label>
 						<div class="form-group">
 							<input type="text" name="ug_percentage" value="<?php echo $this->input->post('ug_percentage'); ?>" class="form-control" id="ug_percentage" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ug_passing_year" class="control-label">UG Passing Year</label>
+						<label for="ug_passing_year" class="control-label"><span class="text-danger">*</span>UG Passing Year</label>
 						<div class="form-group">
 							<input type="text" name="ug_passing_year" value="<?php echo $this->input->post('ug_passing_year'); ?>" class="form-control" id="ug_passing_year" />
 						</div>
 					</div>
 					<div class="col-md-6">
-						<label for="ug_institute" class="control-label">UG Institute</label>
+						<label for="ug_institute" class="control-label"><span class="text-danger">*</span>UG Institute</label>
 						<div class="form-group">
 							<input type="text" name="ug_institute" value="<?php echo $this->input->post('ug_institute'); ?>" class="form-control" id="ug_institute" />
 						</div>

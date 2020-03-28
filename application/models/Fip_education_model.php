@@ -24,6 +24,7 @@ class Fip_education_model extends CI_Model
      */
     function get_all_fip_education()
     {
+        $this->db->where('deleted_at', null);
         $this->db->order_by('id', 'desc');
         return $this->db->get('fip_education')->result_array();
     }
@@ -42,6 +43,7 @@ class Fip_education_model extends CI_Model
      */
     function update_fip_education($id,$params)
     {
+        $params['updated_at'] = date("Y-m-d H:i:s");
         $this->db->where('id',$id);
         return $this->db->update('fip_education',$params);
     }
@@ -51,6 +53,10 @@ class Fip_education_model extends CI_Model
      */
     function delete_fip_education($id)
     {
-        return $this->db->delete('fip_education',array('id'=>$id));
+        $this->db->where('id',$id);
+        $params = [];
+        $params['deleted_at'] = date("Y-m-d H:i:s");
+        return $this->db->update('fip_profile',$params);
+        // return $this->db->delete('fip_education',array('id'=>$id));
     }
 }
