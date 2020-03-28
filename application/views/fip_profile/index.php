@@ -29,7 +29,7 @@
                     <tr>
 						<td><?php echo $f['id']; ?></td>
 						<td><?php echo $f['emp_id']; ?></td>
-						<td><?php echo $f['dept']; ?></td>
+						<td><?php echo $f['dept_name']; ?></td>
 						<td><?php echo $f['gender']; ?></td>
 						<td><?php echo $f['dob']; ?></td>
 						<td><?php echo $f['mobileno']; ?></td>
