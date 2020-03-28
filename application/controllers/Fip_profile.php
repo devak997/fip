@@ -27,13 +27,27 @@ class Fip_profile extends CI_Controller{
      */
     function add()
     {   
-        if(isset($_POST) && count($_POST) > 0)     
+        $this->load->library('form_validation');
+
+		$this->form_validation->set_rules('gender','Gender','required');
+		$this->form_validation->set_rules('emp_id','Emp Id','required|max_length[100]');
+		$this->form_validation->set_rules('dob','Dob','required');
+		$this->form_validation->set_rules('mobileno','Mobileno','required|max_length[255]');
+		$this->form_validation->set_rules('mailid','Mailid','required|max_length[255]');
+		$this->form_validation->set_rules('city','City','required|max_length[255]');
+		$this->form_validation->set_rules('aadhar','Aadhar','required|integer');
+		$this->form_validation->set_rules('pan','Pan','required|max_length[25]');
+		$this->form_validation->set_rules('bank_name','Bank Name','required|max_length[100]');
+		$this->form_validation->set_rules('bank_accno','Bank Accno','required|max_length[255]');
+		$this->form_validation->set_rules('bank_ifsc','Bank Ifsc','required|max_length[100]');
+		
+		if($this->form_validation->run())     
         {   
             $params = array(
-				'emp_id' => $this->input->post('emp_id'),
 				'dept' => $this->input->post('dept'),
-				'dob' => $this->input->post('dob'),
 				'gender' => $this->input->post('gender'),
+				'emp_id' => $this->input->post('emp_id'),
+				'dob' => $this->input->post('dob'),
 				'mobileno' => $this->input->post('mobileno'),
 				'mailid' => $this->input->post('mailid'),
 				'city' => $this->input->post('city'),
@@ -48,7 +62,10 @@ class Fip_profile extends CI_Controller{
             redirect('fip_profile/index');
         }
         else
-        {            
+        {
+			$this->load->model('Fip_dept_model');
+			$data['all_fip_dept'] = $this->Fip_dept_model->get_all_fip_dept();
+            
             $data['_view'] = 'fip_profile/add';
             $this->load->view('layouts/main',$data);
         }
@@ -64,13 +81,27 @@ class Fip_profile extends CI_Controller{
         
         if(isset($data['fip_profile']['id']))
         {
-            if(isset($_POST) && count($_POST) > 0)     
+            $this->load->library('form_validation');
+
+			$this->form_validation->set_rules('gender','Gender','required');
+			$this->form_validation->set_rules('emp_id','Emp Id','required|max_length[100]');
+			$this->form_validation->set_rules('dob','Dob','required');
+			$this->form_validation->set_rules('mobileno','Mobileno','required|max_length[255]');
+			$this->form_validation->set_rules('mailid','Mailid','required|max_length[255]');
+			$this->form_validation->set_rules('city','City','required|max_length[255]');
+			$this->form_validation->set_rules('aadhar','Aadhar','required|integer');
+			$this->form_validation->set_rules('pan','Pan','required|max_length[25]');
+			$this->form_validation->set_rules('bank_name','Bank Name','required|max_length[100]');
+			$this->form_validation->set_rules('bank_accno','Bank Accno','required|max_length[255]');
+			$this->form_validation->set_rules('bank_ifsc','Bank Ifsc','required|max_length[100]');
+		
+			if($this->form_validation->run())     
             {   
                 $params = array(
-					'emp_id' => $this->input->post('emp_id'),
 					'dept' => $this->input->post('dept'),
-					'dob' => $this->input->post('dob'),
 					'gender' => $this->input->post('gender'),
+					'emp_id' => $this->input->post('emp_id'),
+					'dob' => $this->input->post('dob'),
 					'mobileno' => $this->input->post('mobileno'),
 					'mailid' => $this->input->post('mailid'),
 					'city' => $this->input->post('city'),
@@ -86,6 +117,9 @@ class Fip_profile extends CI_Controller{
             }
             else
             {
+				$this->load->model('Fip_dept_model');
+				$data['all_fip_dept'] = $this->Fip_dept_model->get_all_fip_dept();
+
                 $data['_view'] = 'fip_profile/edit';
                 $this->load->view('layouts/main',$data);
             }

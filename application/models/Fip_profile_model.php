@@ -24,7 +24,8 @@ class Fip_profile_model extends CI_Model
      */
     function get_all_fip_profile()
     {
-        $this->db->order_by('id', 'desc');
+        $this->db->where('deleted_at', null);
+        $this->db->order_by('id', 'asc');
         return $this->db->get('fip_profile')->result_array();
     }
         
@@ -43,6 +44,7 @@ class Fip_profile_model extends CI_Model
     function update_fip_profile($id,$params)
     {
         $this->db->where('id',$id);
+        $params['updated_at'] = date("Y-m-d H:i:s");
         return $this->db->update('fip_profile',$params);
     }
     
@@ -51,6 +53,10 @@ class Fip_profile_model extends CI_Model
      */
     function delete_fip_profile($id)
     {
-        return $this->db->delete('fip_profile',array('id'=>$id));
+        $this->db->where('id',$id);
+        $params = [];
+        $params['deleted_at'] = date("Y-m-d H:i:s");
+        return $this->db->update('fip_profile',$params);
+        // return $this->db->delete('fip_profile',array('id'=>$id));
     }
 }

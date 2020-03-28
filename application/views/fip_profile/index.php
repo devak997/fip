@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">All Profiles</h3>
+                <h3 class="box-title">Profile</h3>
             	<div class="box-tools">
                     <a href="<?php echo site_url('fip_profile/add'); ?>" class="btn btn-success btn-sm">Add</a> 
                 </div>
@@ -11,10 +11,10 @@
                 <table class="table table-striped">
                     <tr>
 						<th>ID</th>
-						<th>Employee ID</th>
+						<th>Employee Id</th>
 						<th>Department</th>
-						<th>DOB</th>
 						<th>Gender</th>
+						<th>DOB</th>
 						<th>Mobile No.</th>
 						<th>Mail ID</th>
 						<th>City</th>
@@ -30,8 +30,8 @@
 						<td><?php echo $f['id']; ?></td>
 						<td><?php echo $f['emp_id']; ?></td>
 						<td><?php echo $f['dept']; ?></td>
-						<td><?php echo $f['dob']; ?></td>
 						<td><?php echo $f['gender']; ?></td>
+						<td><?php echo $f['dob']; ?></td>
 						<td><?php echo $f['mobileno']; ?></td>
 						<td><?php echo $f['mailid']; ?></td>
 						<td><?php echo $f['city']; ?></td>
