@@ -8,21 +8,32 @@
 			<div class="box-body">
 				<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="password" class="control-label">Password</label>
+						<label for="emp_id" class="control-label">Employee ID</label>
 						<div class="form-group">
-							<input type="text" name="password" value="<?php echo ($this->input->post('password') ? $this->input->post('password') : $fip_user['password']); ?>" class="form-control" id="password" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="id" class="control-label">ID</label>
-						<div class="form-group">
-							<input type="text" name="id" value="<?php echo ($this->input->post('id') ? $this->input->post('id') : $fip_user['id']); ?>" class="form-control" id="id" />
+							<input type="text" name="emp_id" value="<?php echo($this->input->post('emp_id') ? $this->input->post('emp_id') : $fip_user['emp_id'] );?>" class="form-control" id="emp_id"/>
+		
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="role" class="control-label">Role</label>
 						<div class="form-group">
-							<input type="text" name="role" value="<?php echo ($this->input->post('role') ? $this->input->post('role') : $fip_user['role']); ?>" class="form-control" id="role" />
+							<select name="role" class="form-control">
+								<option value="">select fip_role</option>
+								<?php 
+								foreach($all_fip_roles as $fip_role)
+								{
+									$selected = ($fip_role['id'] == $fip_user['role']) ? ' selected="selected"' : "";
+
+									echo '<option value="'.$fip_role['id'].'" '.$selected.'>'.$fip_role['role'].'</option>';
+								} 
+								?>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="password" class="control-label">Password</label>
+						<div class="form-group">
+							<input type="text" name="password" value="<?php echo ($this->input->post('password') ? $this->input->post('password') : $fip_user['password']); ?>" class="form-control" id="password" />
 						</div>
 					</div>
 				</div>

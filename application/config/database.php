@@ -78,6 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+        // 'port'=>3080,
 	'database' => 'fip_pragati',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

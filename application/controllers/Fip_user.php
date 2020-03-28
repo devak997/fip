@@ -30,16 +30,19 @@ class Fip_user extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'password' => $this->input->post('password'),
-				'id' => $this->input->post('id'),
+				'emp_id' => $this->input->post('emp_id'),
 				'role' => $this->input->post('role'),
+				'password' => $this->input->post('password'),
             );
             
             $fip_user_id = $this->Fip_user_model->add_fip_user($params);
             redirect('fip_user/index');
         }
         else
-        {            
+        {
+			$this->load->model('Fip_role_model');
+			$data['all_fip_roles'] = $this->Fip_role_model->get_all_fip_roles();
+            
             $data['_view'] = 'fip_user/add';
             $this->load->view('layouts/main',$data);
         }
@@ -58,9 +61,9 @@ class Fip_user extends CI_Controller{
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'password' => $this->input->post('password'),
-					'id' => $this->input->post('id'),
+					'emp_id' => $this->input->post('emp_id'),
 					'role' => $this->input->post('role'),
+					'password' => $this->input->post('password'),
                 );
 
                 $this->Fip_user_model->update_fip_user($emp_id,$params);            
@@ -68,6 +71,9 @@ class Fip_user extends CI_Controller{
             }
             else
             {
+				$this->load->model('Fip_role_model');
+				$data['all_fip_roles'] = $this->Fip_role_model->get_all_fip_roles();
+
                 $data['_view'] = 'fip_user/edit';
                 $this->load->view('layouts/main',$data);
             }
@@ -82,7 +88,7 @@ class Fip_user extends CI_Controller{
     function remove($emp_id)
     {
         $fip_user = $this->Fip_user_model->get_fip_user($emp_id);
-
+        
         // check if the fip_user exists before trying to delete it
         if(isset($fip_user['emp_id']))
         {

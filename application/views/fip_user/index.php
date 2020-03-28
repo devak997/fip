@@ -10,18 +10,18 @@
             <div class="box-body">
                 <table class="table table-striped">
                     <tr>
-						<th>Emp Id</th>
-						<th>Password</th>
 						<th>ID</th>
+						<th>Emp Id</th>
 						<th>Role</th>
+						<th>Password</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($fip_users as $f){ ?>
                     <tr>
-						<td><?php echo $f['emp_id']; ?></td>
-						<td><?php echo $f['password']; ?></td>
 						<td><?php echo $f['id']; ?></td>
+						<td><?php echo $f['emp_id']; ?></td>
 						<td><?php echo $f['role']; ?></td>
+						<td><?php echo $f['password']; ?></td>
 						<td>
                             <a href="<?php echo site_url('fip_user/edit/'.$f['emp_id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
                             <a href="<?php echo site_url('fip_user/remove/'.$f['emp_id']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>

@@ -24,8 +24,11 @@ class Fip_user_model extends CI_Model
      */
     function get_all_fip_users()
     {
-        $this->db->order_by('emp_id', 'desc');
-        return $this->db->get('fip_users')->result_array();
+        $this->db->where('u.deleted_at',NULL);
+        $this->db->select('u.id,u.emp_id,u.password,r.role');
+        $this->db->from('fip_users as u');
+        $this->db->join('fip_roles as r','u.role = r.id','inner');
+        return $this->db->get()->result_array();
     }
         
     /*
@@ -51,6 +54,9 @@ class Fip_user_model extends CI_Model
      */
     function delete_fip_user($emp_id)
     {
-        return $this->db->delete('fip_users',array('emp_id'=>$emp_id));
+        $this->db->where('emp_id',$emp_id);
+        $params = [];
+        $params['deleted_at'] = date("Y-m-d H:i:s");
+        return $this->db->update('fip_users',$params);
     }
 }
