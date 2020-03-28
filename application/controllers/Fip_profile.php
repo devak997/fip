@@ -17,7 +17,6 @@ class Fip_profile extends CI_Controller{
     function index()
     {
         $data['fip_profile'] = $this->Fip_profile_model->get_all_fip_profile();
-        
         $data['_view'] = 'fip_profile/index';
         $this->load->view('layouts/main',$data);
     }

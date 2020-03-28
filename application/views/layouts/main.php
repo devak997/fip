@@ -124,7 +124,7 @@
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Fip Dept</span>
+                                <i class="fa fa-desktop"></i> <span>Departments</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
@@ -137,7 +137,7 @@
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Fip Education</span>
+                                <i class="fa fa-desktop"></i> <span>Employee Education</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">
@@ -163,7 +163,7 @@
                         </li>
 						<li>
                             <a href="#">
-                                <i class="fa fa-desktop"></i> <span>Fip Profile</span>
+                                <i class="fa fa-desktop"></i> <span>Employee Profile</span>
                             </a>
                             <ul class="treeview-menu">
 								<li class="active">

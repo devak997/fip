@@ -18,15 +18,17 @@ class Fip_profile_model extends CI_Model
     {
         return $this->db->get_where('fip_profile',array('id'=>$id))->row_array();
     }
-        
+    
     /*
      * Get all fip_profile
      */
     function get_all_fip_profile()
     {
-        $this->db->where('deleted_at', null);
-        $this->db->order_by('id', 'asc');
-        return $this->db->get('fip_profile')->result_array();
+        $this->db->where('fp.deleted_at', null);
+        $this->db->from('fip_profile as fp');
+        $this->db->join('fip_dept as fd');
+        $this->db->order_by('fp.id', 'asc');
+        return $this->db->get()->result_array();
     }
         
     /*
