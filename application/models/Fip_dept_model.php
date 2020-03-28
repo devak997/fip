@@ -24,7 +24,7 @@ class Fip_dept_model extends CI_Model
      */
     function get_all_fip_dept()
     {
-        $this->db->order_by('id', 'desc');
+        $this->db->order_by('id', 'asc');
         return $this->db->get('fip_dept')->result_array();
     }
         
@@ -43,6 +43,7 @@ class Fip_dept_model extends CI_Model
     function update_fip_dept($id,$params)
     {
         $this->db->where('id',$id);
+        $params['updated_at'] = date("Y-m-d H:i:s");
         return $this->db->update('fip_dept',$params);
     }
     

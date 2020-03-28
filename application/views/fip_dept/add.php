@@ -7,8 +7,14 @@
             <?php echo form_open('fip_dept/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
+				  <div class="col-md-6">
+						<label for="id" class="control-label">Department ID<span class="text-danger">*</span></label>
+						<div class="form-group">
+							<input type="text" name="id" value="<?php echo $this->input->post('id'); ?>" class="form-control" id="id" required />
+						</div>
+					</div>
 					<div class="col-md-6">
-						<label for="dept_name" class="control-label">Department Name</label>
+						<label for="dept_name" class="control-label">Department Name <span class="text-danger">*</span> </label>
 						<div class="form-group">
 							<input type="text" name="dept_name" value="<?php echo $this->input->post('dept_name'); ?>" class="form-control" id="dept_name" />
 						</div>

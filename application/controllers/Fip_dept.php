@@ -30,7 +30,8 @@ class Fip_dept extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'dept_name' => $this->input->post('dept_name'),
+                'dept_name' => $this->input->post('dept_name'),
+                'id' => $this->input->post('id'),
             );
             
             $fip_dept_id = $this->Fip_dept_model->add_fip_dept($params);
@@ -56,7 +57,8 @@ class Fip_dept extends CI_Controller{
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'dept_name' => $this->input->post('dept_name'),
+                    'dept_name' => $this->input->post('dept_name'),
+                    'id' => $this->input->post('id'),
                 );
 
                 $this->Fip_dept_model->update_fip_dept($id,$params);            
