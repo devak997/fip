@@ -7,8 +7,8 @@
                     <a href="<?php echo site_url('fip_profile/add'); ?>" class="btn btn-success btn-sm">Add</a> 
                 </div>
             </div>
-            <div class="box-body">
-                <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
                     <tr>
 						<th>ID</th>
 						<th>Employee Id</th>

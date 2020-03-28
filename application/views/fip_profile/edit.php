@@ -56,7 +56,7 @@
 					<div class="col-md-6">
 						<label for="dob" class="control-label"><span class="text-danger">*</span>DOB</label>
 						<div class="form-group">
-							<input type="text" name="dob" value="<?php echo ($this->input->post('dob') ? $this->input->post('dob') : date_format(date('Y-m-d',$fip_profile['dob']),'d/m/Y')); ?>" class="has-datepicker form-control" id="dob" />
+							<input type="text" name="dob" value="<?php echo ($this->input->post('dob') ? $this->input->post('dob') :implode('/', array_reverse(explode('-', $fip_profile['dob'])))); ?>" class="has-datepicker form-control" id="dob" />
 							<span class="text-danger"><?php echo form_error('dob');?></span>
 						</div>
 					</div>

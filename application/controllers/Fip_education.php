@@ -30,7 +30,7 @@ class Fip_education extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'profile_id' => $this->input->post('profile_id'),
+				'emp_id' => $this->input->post('emp_id'),
 				'ssc_percentage' => $this->input->post('ssc_percentage'),
 				'ssc_passing_year' => $this->input->post('ssc_passing_year'),
 				'ssc_institute' => $this->input->post('ssc_institute'),
@@ -70,7 +70,7 @@ class Fip_education extends CI_Controller{
             if(isset($_POST) && count($_POST) > 0)     
             {   
                 $params = array(
-					'profile_id' => $this->input->post('profile_id'),
+					'emp_id' => $this->input->post('emp_id'),
 					'ssc_percentage' => $this->input->post('ssc_percentage'),
 					'ssc_passing_year' => $this->input->post('ssc_passing_year'),
 					'ssc_institute' => $this->input->post('ssc_institute'),

@@ -7,11 +7,11 @@
                     <a href="<?php echo site_url('fip_education/add'); ?>" class="btn btn-success btn-sm">Add</a> 
                 </div>
             </div>
-            <div class="box-body">
-                <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
                     <tr>
 						<th>ID</th>
-						<th>Profile ID</th>
+						<th>Employee ID</th>
 						<th>SSC Percentage</th>
 						<th>SSC Passing Year</th>
 						<th>SSC Institute</th>
@@ -31,7 +31,7 @@
                     <?php foreach($fip_education as $f){ ?>
                     <tr>
 						<td><?php echo $f['id']; ?></td>
-						<td><?php echo $f['profile_id']; ?></td>
+						<td><?php echo $f['emp_id']; ?></td>
 						<td><?php echo $f['ssc_percentage']; ?></td>
 						<td><?php echo $f['ssc_passing_year']; ?></td>
 						<td><?php echo $f['ssc_institute']; ?></td>

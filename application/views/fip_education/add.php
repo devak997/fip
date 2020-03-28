@@ -8,9 +8,9 @@
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
-						<label for="profile_id" class="control-label"><span class="text-danger">*</span>Profile ID</label>
+						<label for="emp_id" class="control-label"><span class="text-danger">*</span>Employee ID</label>
 						<div class="form-group">
-							<input type="text" name="profile_id" value="<?php echo $this->input->post('profile_id'); ?>" class="form-control" id="profile_id" />
+							<input type="text" name="emp_id" value="<?php echo $this->input->post('emp_id'); ?>" class="form-control" id="emp_id" />
 						</div>
 					</div>
 					<div class="col-md-6">
