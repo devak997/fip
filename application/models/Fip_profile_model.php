@@ -38,7 +38,6 @@ class Fip_profile_model extends CI_Model
     function add_fip_profile($params)
     {
         $this->db->insert('fip_profile',$params);
-        $params['dob']=date("Y-m-d",strtotime($params['dob']));
         return $this->db->insert_id();
     }
     
@@ -48,9 +47,6 @@ class Fip_profile_model extends CI_Model
     function update_fip_profile($id,$params)
     {
         $this->db->where('id',$id);
-        if(isset($params['dob'])) {
-            $params['dob']=date("Y-m-d",strtotime($params['dob']));
-        }
         $params['updated_at'] = date("Y-m-d H:i:s");
         return $this->db->update('fip_profile',$params);
     }

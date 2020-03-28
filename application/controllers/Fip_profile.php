@@ -46,7 +46,7 @@ class Fip_profile extends CI_Controller{
 				'dept' => $this->input->post('dept'),
 				'gender' => $this->input->post('gender'),
 				'emp_id' => $this->input->post('emp_id'),
-				'dob' => $this->input->post('dob'),
+				'dob' => date('Y-m-d',strtotime(str_replace('/','-',$this->input->post('dob')))),
 				'mobileno' => $this->input->post('mobileno'),
 				'mailid' => $this->input->post('mailid'),
 				'city' => $this->input->post('city'),
@@ -56,7 +56,7 @@ class Fip_profile extends CI_Controller{
 				'bank_accno' => $this->input->post('bank_accno'),
 				'bank_ifsc' => $this->input->post('bank_ifsc'),
             );
-            
+           
             $fip_profile_id = $this->Fip_profile_model->add_fip_profile($params);
             redirect('fip_profile/index');
         }
@@ -100,7 +100,7 @@ class Fip_profile extends CI_Controller{
 					'dept' => $this->input->post('dept'),
 					'gender' => $this->input->post('gender'),
 					'emp_id' => $this->input->post('emp_id'),
-					'dob' => $this->input->post('dob'),
+					'dob' => date('Y-m-d',strtotime(str_replace('/','-',$this->input->post('dob')))),
 					'mobileno' => $this->input->post('mobileno'),
 					'mailid' => $this->input->post('mailid'),
 					'city' => $this->input->post('city'),

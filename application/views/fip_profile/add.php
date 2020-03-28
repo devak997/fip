@@ -56,7 +56,7 @@
 					<div class="col-md-6">
 						<label for="dob" class="control-label"><span class="text-danger">*</span>DOB</label>
 						<div class="form-group">
-							<input type="text" name="dob" value="<?php echo $this->input->post('dob'); ?>" class="has-datepicker form-control" id="dob" />
+							<input type="text" name="dob" value="<?php $this->input->post('dob'); ?>" class="has-datepicker form-control" id="dob" />
 							<span class="text-danger"><?php echo form_error('dob');?></span>
 						</div>
 					</div>
